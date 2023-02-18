@@ -1,9 +1,10 @@
 version: '3'
 
+networks:
+  monitoring:
+    driver: bridge
+
 services:
-
-
-
 
 
   ticket-price:
@@ -11,12 +12,17 @@ services:
     network_mode: host
     ports:
       - "8081:8081"
+
+    networks:
+      - monitoring
     environment:
       - "ticket-price-db=ticket-price-db"
     restart: always
 
   ticket-price-db:
     image: postgres
+    networks:
+      - monitoring
     ports:
       - "5432:5432"
     environment:
