@@ -1,0 +1,39 @@
+server:
+  port: 8081
+
+
+spring:
+  config:
+    activate:
+      on-profile: default
+  application:
+    name: ticket-price
+  datasource:
+    url: jdbc:postgresql://${ticket-price-db:localhost}:5432/ticket-price-db
+    username: raul
+    password: raul
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+--- # Testing configuration
+
+server:
+  port: ${random.int(5000,5100)}
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  application:
+    name: ticket-price
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: raul
+    password: raul
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
