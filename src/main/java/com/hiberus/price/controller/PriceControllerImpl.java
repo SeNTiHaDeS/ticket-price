@@ -11,16 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
 
-@Controller
+@RestController
 @Slf4j
-public class PriceControllerImpl implements PriceController {
+public class PriceControllerImpl {
 
     PriceService priceService;
 
@@ -29,7 +26,6 @@ public class PriceControllerImpl implements PriceController {
         this.priceService = priceService;
     }
 
-    @Override
     @GetMapping(path = "/price")
     public ResponseEntity<?> getPrice(@RequestParam String destination, @RequestParam String transport) {
         try {
@@ -48,7 +44,7 @@ public class PriceControllerImpl implements PriceController {
         }
     }
 
-    @Override
+
     @PostMapping(path = "/price")
     public ResponseEntity<?> postPrice(@RequestBody PostPriceRequestDto postPriceRequestDto) {
         Destination destination = postPriceRequestDto.getDestination();
