@@ -10,8 +10,8 @@ spring:
     name: ticket-price
   datasource:
     url: jdbc:postgresql://${ticket-price-db:localhost}:5432/ticket-price-db
-    username: raul
-    password: raul
+    username: root
+    password: root
   jpa:
     hibernate:
       ddl-auto: update
