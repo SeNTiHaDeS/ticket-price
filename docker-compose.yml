@@ -2,11 +2,6 @@ version: '3'
 
 services:
 
-
-
-
-
-
   ticket-price:
     build: ./
     network_mode: host
