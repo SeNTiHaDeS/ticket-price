@@ -70,6 +70,5 @@ node {
 
                  echo 'Ejecutando contenedores'
                  sh 'docker-compose down'
-                 sh 'mvn clean install'
                  sh 'docker-compose up --build -d'
 }
