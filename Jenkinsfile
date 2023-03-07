@@ -31,6 +31,8 @@ node {
 
 
 
+
+
    stage 'Test'
    echo 'Ejecutando tests'
    try{
