@@ -22,17 +22,6 @@ node {
 
 
    // Etapa: Test
-
-
-
-
-
-
-
-
-
-
-
    stage 'Test'
    echo 'Ejecutando tests'
    try{
