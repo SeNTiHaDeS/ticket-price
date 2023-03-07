@@ -21,6 +21,30 @@ node {
    sh 'mvn clean compile'
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
    // Etapa: Test
    stage 'Test'
    echo 'Ejecutando tests'
