@@ -60,7 +60,7 @@ public class PriceControllerImpl {
 
             priceService.setPrice(p);
 
-            return new ResponseEntity<>("", HttpStatus.CREATED);
+            return new ResponseEntity<>("", HttpStatus.OK);
         }
         catch (IllegalArgumentException e) {
             return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);

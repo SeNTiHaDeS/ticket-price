@@ -20,31 +20,6 @@ node {
    echo 'Compilando aplicación'
    sh 'mvn clean compile'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
    // Etapa: Test
    stage 'Test'
    echo 'Ejecutando tests'
@@ -70,7 +45,7 @@ node {
 
    stage 'Build Imagen y subir a DockerHub'
    echo 'Buildear la imagen'
-   dockerImage = docker.build("ggrande/ticket-order:latest")
+   dockerImage = docker.build("ggrande/ticket-price:latest")
    echo 'Subir imagen a DockerHub'
    withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
       dockerImage.push()
