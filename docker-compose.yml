@@ -4,7 +4,7 @@ services:
 
 
   ticket-price:
-    build: ./
+    image: ticket-price
     network_mode: host
     container_name: ticket-price
     ports:
