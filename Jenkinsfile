@@ -50,5 +50,6 @@ node {
    sh 'docker compose down'
    sh 'docker build -t ticket-price .'
 
+
    sh 'docker compose up --build -d'
 }

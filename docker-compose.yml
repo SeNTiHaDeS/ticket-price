@@ -8,7 +8,7 @@ services:
     network_mode: host
     container_name: ticket-price
     ports:
-      - "8081:8081"
+      - "8083:8083"
     restart: always
 
   ticket-price-db:
