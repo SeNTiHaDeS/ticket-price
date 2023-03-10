@@ -43,6 +43,7 @@ node {
 
    // Etapa: Build Imagen
 
+
    stage 'Build Imagen y subir a DockerHub'
    echo 'Buildear la imagen'
    dockerImage = docker.build("ggrande/ticket-price:latest")
