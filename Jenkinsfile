@@ -48,5 +48,6 @@ node {
    stage 'Ejecutando contenedores'
    echo 'Ejecutando contenedores'
    sh 'docker compose down'
+   sh 'docker build ticket-price'
    sh 'docker compose up --build -d'
 }
