@@ -41,15 +41,8 @@ node {
       throw err
    }
 
-   // Etapa: Instalar y guardar JAR
-
-   stage 'Instalar y guardar JAR'
-   echo 'Instala el paquete generado en el repositorio maven'
-   sh 'mvn install -Dmaven.test.skip=true'
-   step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar, **/target/*.war', fingerprint: true])
 
 
-   // Etapa: Build Imagen
 
    //  ETAPA: ejecutar contenedores
 
