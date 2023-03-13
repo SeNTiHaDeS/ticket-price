@@ -55,6 +55,8 @@ node {
 
    stage 'Ejecutando contenedores'
    echo 'ejecutando contenedores'
-   sh 'docker compose down'
-   sh 'docker compose up --build -d'
+
+   sh 'docker-compose down --rmi all'
+   sh' docker-compose build --no-cache'
+   sh 'docker compose up -d'
 }
