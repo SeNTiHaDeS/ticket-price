@@ -4,7 +4,11 @@ services:
 
 
   ticket-price:
-    build: ./
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      tags:
+        - ticket-price-ticket-price:latest
     network_mode: host
     container_name: ticket-price
     ports:
